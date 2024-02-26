@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -11,11 +15,17 @@ class ClassroomsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return Application|Factory|View
      */
     public function index()
     {
-        return Inertia::render('Classrooms/Index');
+        $classrooms = Classroom::all();
+        dump($classrooms);
+        return view('classrooms', ['classrooms' => $classrooms]);
+
+//        return Inertia::render('ClassroomIndex', [
+//            'classrooms' => $classrooms
+//        ]);
     }
 
     /**
@@ -31,7 +41,7 @@ class ClassroomsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -64,7 +74,7 @@ class ClassroomsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

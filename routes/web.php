@@ -142,7 +142,7 @@ Route::get('/img/{path}', [ImagesController::class, 'show'])
     ->where('path', '.*')
     ->name('image');
 
-// Classrooms
+// Classroom
 
 Route::get('/classrooms', [ClassroomsController::class, 'index'])
     ->middleware('auth')
