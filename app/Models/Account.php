@@ -21,8 +21,8 @@ class Account extends Model
         return $this->hasMany(Contact::class);
     }
 
-    public function classroms()
+    public function cursors()
     {
-        return $this->hasMany(Classroms::class);
+        return $this->hasMany(Cursor::class);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\ClassroomsController;
+use App\Http\Controllers\CursorsController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
@@ -142,8 +142,8 @@ Route::get('/img/{path}', [ImagesController::class, 'show'])
     ->where('path', '.*')
     ->name('image');
 
-// Classroom
+// Cursor
 
-Route::get('/classrooms', [ClassroomsController::class, 'index'])
+Route::get('/cursors', [CursorsController::class, 'index'])
     ->middleware('auth')
-    ->name('classrooms');
+    ->name('cursors');

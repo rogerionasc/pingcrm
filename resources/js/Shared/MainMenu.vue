@@ -25,9 +25,9 @@
       </Link>
     </div>
     <div class="mb-4">
-      <Link class="group flex items-center py-3" href="/classrooms">
-        <icon name="classrooms" class="mr-2 w-4 h-4" :class="isUrl('classrooms') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
-        <div :class="isUrl('classrooms') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Classrooms</div>
+      <Link class="group flex items-center py-3" href="/cursors">
+        <icon name="cursors" class="mr-2 w-4 h-4" :class="isUrl('cursors') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
+        <div :class="isUrl('cursors') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Cursors</div>
       </Link>
     </div>
 
