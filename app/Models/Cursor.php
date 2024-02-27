@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Cursor extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'description'
+    ];
+
+    public function account()
+    {
+        return $this->belongsTo(Account::class);
+    }
 }

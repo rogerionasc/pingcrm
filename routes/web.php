@@ -147,3 +147,11 @@ Route::get('/img/{path}', [ImagesController::class, 'show'])
 Route::get('/cursors', [CursorsController::class, 'index'])
     ->middleware('auth')
     ->name('cursors');
+
+Route::get('/cursors/create', [CursorsController::class, 'create'])
+    ->middleware('auth')
+    ->name('cursors.create');
+
+Route::post('/cursors', [CursorsController::class, 'store'])
+    ->name('cursors.store')
+    ->middleware('auth');

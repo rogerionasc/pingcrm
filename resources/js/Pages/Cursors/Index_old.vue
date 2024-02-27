@@ -30,7 +30,7 @@
 
 <script>
 import {Head, Link} from '@inertiajs/inertia-vue3'
-import Icon from '@/Shared/Icon'
+// import Icon from '@/Shared/Icon'
 import Layout from '@/Shared/Layout'
 import throttle from "lodash/throttle";
 import pickBy from "lodash/pickBy";
@@ -39,7 +39,7 @@ export default {
   components: {
     Head,
     Link,
-    Icon,
+    // Icon,
   },
   props: {
     classrooms: Object,

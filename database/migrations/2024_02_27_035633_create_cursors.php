@@ -15,8 +15,9 @@ class CreateCursors extends Migration
     {
         Schema::create('cursors', function (Blueprint $table) {
             $table->id();
+            $table->integer('account_id')->index();
             $table->string('name', 25);
-            $table->string('description', 50);
+            $table->string('description', 255)->nullable();
             $table->timestamps();
         });
     }

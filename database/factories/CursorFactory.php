@@ -23,7 +23,7 @@ class CursorFactory extends Factory
                 'HTML', 'CSS', 'SQL', 'Shell', 'Assembly', 'R', 'Julia', 'Lua', 'VB.NET', 'Clojure', 'Groovy',
                 'Matlab', 'Fortran', 'Scheme', 'Elixir', 'F#', 'COBOL', 'Pascal', 'Ada', 'Lisp'
             ]),
-            'description' => $this->faker->text(50),
+            'description' => $this->faker->paragraph(1),
         ];
     }
 }
