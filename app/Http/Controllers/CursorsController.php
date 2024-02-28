@@ -14,7 +14,9 @@ class CursorsController extends Controller
 {
     public function index()
     {
-        $cursors = DB::table('cursors')->get();
+        $cursors = DB::table('cursors')->paginate(10);
+//        $cursors = DB::table('cursors')->get();
+//        dd($cursors);
         return Inertia::render('Cursors/Index', [
             'cursors' => $cursors
         ]);
