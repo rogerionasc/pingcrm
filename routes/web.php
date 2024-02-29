@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\CursorsController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\CursorsController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\OrganizationsController;
@@ -153,5 +153,9 @@ Route::get('/cursors/create', [CursorsController::class, 'create'])
     ->name('cursors.create');
 
 Route::post('/cursors', [CursorsController::class, 'store'])
-    ->name('cursors.store')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('cursors.store');
+
+Route::get('cursors/{cursor}/edit', [CursorsController::class, 'edit'])
+    ->middleware('auth')
+    ->name('cursors.edit');

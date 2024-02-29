@@ -59,7 +59,7 @@ export default {
     contact: Object,
     organizations: Array,
   },
-  remember: 'form',
+  // remember: 'form',
   data() {
     return {
       form: this.$inertia.form({

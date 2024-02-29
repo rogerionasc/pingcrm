@@ -67,11 +67,11 @@ class CursorsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
-    public function edit($id)
+    public function edit(Cursor $cursor)
     {
-        //
+         return Inertia::render('Cursors/Edit', ['cursors' => $cursor]);
     }
 
     /**
