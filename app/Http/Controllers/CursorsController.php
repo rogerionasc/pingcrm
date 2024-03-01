@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cursor;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -48,7 +49,7 @@ class CursorsController extends Controller
         Auth::user()->account->cursors()->create([
             'name' => Request::get('name'),
             'description' => Request::get('description'),
-            ]);
+        ]);
         return Redirect::route('cursors')->with('success', 'Cursor created.');
     }
 
@@ -71,19 +72,22 @@ class CursorsController extends Controller
      */
     public function edit(Cursor $cursor)
     {
-         return Inertia::render('Cursors/Edit', ['cursor' => $cursor]);
+        return Inertia::render('Cursors/Edit', ['cursor' => $cursor]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Cursor $cursor
+     * @return RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Cursor $cursor)
     {
+        $cursor->update( Request::validate([
+            'name' => ['required', 'max:50'],
+            'description' => ['required', 'max:50'],]));
         //
+        return Redirect::back()->with('success', 'Cursor updated.');
     }
 
     /**
