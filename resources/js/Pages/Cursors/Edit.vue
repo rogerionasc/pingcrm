@@ -10,11 +10,11 @@
       <form @submit.prevent="update">
         <div class="flex flex-wrap -mb-8 -mr-6 p-8">
           <text-input v-model="form.name" :error="form.errors.name" class="pb-8 pr-6 w-full lg:w-1/2" label="Cursor name" />
-          <text-input v-model="form.description" :error="form.errors.description" class="pb-8 pr-6 w-full lg:w-1/2" label="Last name" />
+          <text-input v-model="form.description" :error="form.errors.description" class="pb-8 pr-6 w-full lg:w-1/2" label="Cursor description" />
         </div>
         <div class="flex items-center px-8 py-4 bg-gray-50 border-t border-gray-100">
-          <button v-if="!cursor.deleted_at" class="text-red-600 hover:underline" tabindex="-1" type="button" @click="destroy">Delete Cuursor</button>
-          <loading-button :loading="form.processing" class="btn-indigo ml-auto" type="submit">Update Contact</loading-button>
+          <button v-if="!cursor.deleted_at" class="text-red-600 hover:underline" tabindex="-1" type="button" @click="destroy">Delete Cursor</button>
+          <loading-button :loading="form.processing" class="btn-indigo ml-auto" type="submit">Update Cursor</loading-button>
         </div>
       </form>
     </div>

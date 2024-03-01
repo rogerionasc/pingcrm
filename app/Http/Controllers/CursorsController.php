@@ -85,8 +85,11 @@ class CursorsController extends Controller
     {
         $cursor->update( Request::validate([
             'name' => ['required', 'max:50'],
-            'description' => ['required', 'max:50'],]));
+            'description' => ['required', 'max:100'],
+            ])
+        );
         //
+
         return Redirect::back()->with('success', 'Cursor updated.');
     }
 

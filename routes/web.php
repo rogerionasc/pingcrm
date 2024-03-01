@@ -159,3 +159,7 @@ Route::post('/cursors', [CursorsController::class, 'store'])
 Route::get('cursors/{cursor}/edit', [CursorsController::class, 'edit'])
     ->middleware('auth')
     ->name('cursors.edit');
+
+Route::put('cursors/{cursor}', [CursorsController::class, 'update'])
+    ->middleware('auth')
+    ->name('cursors.update');
