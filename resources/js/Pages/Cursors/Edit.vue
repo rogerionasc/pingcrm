@@ -4,7 +4,7 @@
     <h1 class="mb-8 text-3xl font-bold">
       <Link class="text-indigo-400 hover:text-indigo-600" href="/cursors">Cursors</Link>
       <span class="text-indigo-400 font-medium">/</span>
-      <!--      {{cursor.id}}-->
+            {{cursor.name}}
     </h1>
 
   </div>
@@ -24,16 +24,12 @@ export default {
   props: {
     cursor: Object,
   },
-  remember: 'form',
   data() {
     return {
-      data: []
-      // form: this.$inertia.form({
-
-      //   name: this.cursor.name,
-      //   description: this.cursor.description,
-      // }),
-
+      form: this.$inertia.form({
+        name: this.cursor.name,
+        description: this.cursor.description,
+      }),
     }
   },
   methods: {

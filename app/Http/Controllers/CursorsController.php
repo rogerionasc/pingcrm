@@ -71,7 +71,7 @@ class CursorsController extends Controller
      */
     public function edit(Cursor $cursor)
     {
-         return Inertia::render('Cursors/Edit', ['cursors' => $cursor]);
+         return Inertia::render('Cursors/Edit', ['cursor' => $cursor]);
     }
 
     /**
