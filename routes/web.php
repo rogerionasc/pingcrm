@@ -163,3 +163,7 @@ Route::get('cursors/{cursor}/edit', [CursorsController::class, 'edit'])
 Route::put('cursors/{cursor}', [CursorsController::class, 'update'])
     ->middleware('auth')
     ->name('cursors.update');
+
+Route::delete('cursors/{cursor}', [CursorsController::class, 'destroy'])
+    ->name('cursors.destroy')
+    ->middleware('auth');

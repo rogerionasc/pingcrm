@@ -97,10 +97,11 @@ class CursorsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Cursor $cursor)
     {
-        //
+        $cursor->delete();
+        return Redirect::route('cursors')->with('success', 'Cursor deleted.');
     }
 }

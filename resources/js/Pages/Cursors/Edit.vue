@@ -51,7 +51,12 @@ export default {
     update() {
       this.form.put(`/cursors/${this.cursor.id}`)
     },
-  },
+    destroy() {
+      if (confirm('Are you sure you want to delete this cursos?')) {
+        this.$inertia.delete(`/cursors/${this.cursor.id}`)
+      }
+    }
+  }
 }
 </script>
 
